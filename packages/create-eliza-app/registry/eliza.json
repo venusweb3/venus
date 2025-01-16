@@ -1,0 +1,6 @@
+{
+    "name": "venus",
+    "defaultDir": "venus",
+    "url": "https://github.com/venusos/venus-starter",
+    "tar": "https://codeload.github.com/venusos/venus-starter/tar.gz/refs/heads/main"
+}

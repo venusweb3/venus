@@ -1,0 +1,68 @@
+{
+    "$schema": "https://turbo.build/schema.json",
+    "tasks": {
+        "check-types": {
+            "dependsOn": ["build"]
+        },
+        "@venusos/agent#check-types": {
+            "dependsOn": [
+                "@venusos/plugin-solana#build",
+                "@venusos/plugin-direct#build"
+            ]
+        },
+        "build": {
+            "outputs": ["dist/**"],
+            "dependsOn": ["^@venusos/core#build"]
+        },
+        "@venusos/client-direct#build": {
+            "outputs": ["dist/**"],
+            "dependsOn": [
+                "@venusos/plugin-image-generation#build",
+                "@venusos/plugin-tee-log#build"
+            ]
+        },
+        "@venusos/plugin-solana#build": {
+            "outputs": ["dist/**"],
+            "dependsOn": [
+                "@venusos/plugin-trustdb#build",
+                "@venusos/plugin-tee#build"
+            ]
+        },
+        "@venusos/plugin-nft-generation#build": {
+            "outputs": ["dist/**"],
+            "dependsOn": ["@venusos/plugin-node#build"]
+        },
+        "@venusos/client-direct#build": {
+            "outputs": ["dist/**"],
+            "dependsOn": ["@venusos/plugin-tee-verifiable-log#build"]
+        },
+        "@venusos/plugin-tee-verifiable-log#build": {
+            "outputs": ["dist/**"],
+            "dependsOn": ["@venusos/core#build", "@venusos/plugin-tee#build"]
+        },
+        "@venusos/plugin-evm#build": {
+            "outputs": ["dist/**"],
+            "dependsOn": ["@venusos/plugin-tee#build"]
+        },
+        "@venusos/plugin-tee-log#build": {
+            "outputs": ["dist/**"],
+            "dependsOn": [
+                "@venusos/plugin-tee#build",
+                "@venusos/plugin-sgx#build"
+            ]
+        },
+        "@venusos/plugin-quai#build": {
+            "outputs": ["dist/**"],
+            "dependsOn": [
+                "@venusos/plugin-trustdb#build"
+            ]
+        },
+        "venus-docs#build": {
+            "outputs": ["build/**"]
+        },
+        "dev": {
+            "persistent": true,
+            "cache": false
+        }
+    }
+}
