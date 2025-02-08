@@ -16,7 +16,7 @@
 
 - 🤖Decentralized Intelligent Tasks
 
-Leverage the high performance and low-cost features of the XION blockchain to ensure secure and efficient task execution.
+Leverage the high performance and low-cost features of the Ancient8 blockchain to ensure secure and efficient task execution.
 
 - 🔐Trusted Execution Environment
 
